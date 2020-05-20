@@ -1,1 +1,66 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+buildPackRef: 0.0.14
+buildPackURL: https://github.com/jenkins-x/jxr-packs-kubernetes.git
+cluster:
+  clusterName: bootv3-staging5
+  devEnvApprovers:
+  - jstrachan
+  environmentGitOwner: cb-kubecd
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: jstrachan-multicluster
+  provider: gke
+  registry: gcr.io
+  zone: europe-west1-d
+environments:
+- gitKind: github
+  gitServer: https://github.com
+  ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+  owner: cb-kubecd
+  promotionStrategy: Auto
+  remoteCluster: true
+  repository: environment-bootv3-staging5
 helmfile: true
+ingress:
+  domain: ""
+  externalDNS: false
+  namespaceSubDomain: -jx.
+  tls:
+    email: ""
+    enabled: false
+    production: false
+repository: nexus
+secretStorage: gsm
+storage:
+  backup:
+    enabled: false
+    url: ""
+  logs:
+    enabled: false
+    url: ""
+  reports:
+    enabled: false
+    url: ""
+  repository:
+    enabled: false
+    url: ""
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
+versionStream:
+  ref: v0.0.96
+  url: https://github.com/jenkins-x/jxr-versions.git
+webhook: lighthouse
