@@ -1,0 +1,96 @@
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-7sql8-1[0m stage [32mpr-checks[0m and container [32mstep-credential-initializer-g2nx9[0m
+{"level":"info","ts":1592570687.5560765,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1592570687.5566692,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-7sql8-1[0m stage [32mpr-checks[0m and container [32mstep-working-dir-initializer-4tlmd[0m
+{"level":"info","ts":1592570688.6028614,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1592570688.605653,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-7sql8-1[0m stage [32mpr-checks[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-7sql8-1[0m stage [32mpr-checks[0m and container [32mstep-git-source-cb-kubecd-environment-bootv3-st-7sql8-l5hdb[0m
+{"level":"info","ts":1592570694.771057,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1592570696.220216,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-bootv3-staging5.git @ master in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-7sql8-1[0m stage [32mpr-checks[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:a6f180b95a18c2641ebb455319bec8e72a4ee2ce,7:91307021da9154f7f73b4132227548afb44a2378
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 91307021da9154f7f73b4132227548afb44a2378: a6f180b95a18c2641ebb455319bec8e72a4ee2ce:
+DEBUG: ran git fetch --unshallow origin 91307021da9154f7f73b4132227548afb44a2378: a6f180b95a18c2641ebb455319bec8e72a4ee2ce: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard a6f180b95a18c2641ebb455319bec8e72a4ee2ce
+DEBUG: ran git reset --hard a6f180b95a18c2641ebb455319bec8e72a4ee2ce in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 91307021da9154f7f73b4132227548afb44a2378
+DEBUG: ran git merge 91307021da9154f7f73b4132227548afb44a2378 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e a6f180b95a18c2641ebb455319bec8e72a4ee2ce..HEAD
+Merged SHA 91307021da9154f7f73b4132227548afb44a2378 with commit message 'chore: Promote nodey481 to version 0.0.3' into base branch master
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-7sql8-1[0m stage [32mpr-checks[0m and container [32mstep-verify-secrets[0m
+created directory /secrets/**-boot
+loaded Secrets from: Google Secret Manager for secret bootv3-staging5-boot-secret
+exported Secrets to file: /secrets/**-boot/secrets.yaml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-7sql8-1[0m stage [32mpr-checks[0m and container [32mstep-create-helmfile[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-7sql8-1[0m stage [32mpr-checks[0m and container [32mstep-lint-helmfile-system[0m
+Adding repo dev http://chartmuseum-**.34.78.195.22.nip.io
+"dev" has been added to your repositories
+
+Adding repo **-labs gs://jenkinsxio-labs-private/charts
+"**-labs" has been added to your repositories
+
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "**-labs" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Fetching **-labs/jenkins-x-crds
+Fetching stable/nginx-ingress
+Linting release=jenkins-x-crds, chart=/tmp/088813733/jenkins-x-crds/0.0.1/**-labs/jenkins-x-crds/jenkins-x-crds
+==> Linting /tmp/088813733/jenkins-x-crds/0.0.1/**-labs/jenkins-x-crds/jenkins-x-crds
+
+1 chart(s) linted, 0 chart(s) failed
+
+Linting release=nginx-ingress, chart=/tmp/088813733/nginx-ingress/1.36.3/stable/nginx-ingress/nginx-ingress
+==> Linting /tmp/088813733/nginx-ingress/1.36.3/stable/nginx-ingress/nginx-ingress
+
+1 chart(s) linted, 0 chart(s) failed
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-7sql8-1[0m stage [32mpr-checks[0m and container [32mstep-lint-helmfile-apps[0m
+Adding repo dev http://chartmuseum-**.34.78.195.22.nip.io
+"dev" has been added to your repositories
+
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Adding repo jenkins-x http://chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Fetching jenkins-x/**boot-helmfile-resources
+Fetching dev/nodey451
+Fetching jenkins-x/tekton
+Fetching dev/nodey481
+Fetching jenkins-x/lighthouse
+in ./helmfile.yaml: 2 errors:
+err 0: the following cmd exited with status 1:
+  /usr/local/bin/helm helm fetch dev/nodey481 --version 0.0.3 --untar --untardir /tmp/892634465/nodey481/0.0.3/dev/nodey481
+
+  Error: chart "nodey481" matching 0.0.3 not found in dev index. (try 'helm repo update'): no chart version found for nodey481-0.0.3
+[31m
+Pipeline failed on stage 'pr-checks' : container 'step-lint-helmfile-apps'. The execution of the pipeline has stopped.[0m
