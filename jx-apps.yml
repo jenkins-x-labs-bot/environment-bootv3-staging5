@@ -7,7 +7,7 @@ apps:
 - name: dev/nodey451
   version: 0.0.8
 - name: dev/nodey481
-  version: 0.0.1
+  version: 0.0.3
 repositories:
 - name: dev
   url: http://chartmuseum-jx.34.78.195.22.nip.io
